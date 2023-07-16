@@ -3,6 +3,7 @@ import type { ButtonHTMLAttributes } from "react";
 
 interface ButtonProps {
   block?: boolean;
+  disabled?: boolean;
   type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
   view?:
     | "primary-default"
@@ -14,6 +15,7 @@ interface ButtonProps {
 
 const Button = ({
   block,
+  disabled,
   type = "button",
   view = "primary-default",
   children,
@@ -21,6 +23,7 @@ const Button = ({
   return (
     <div className={block ? "w-full" : ""}>
       <button
+        disabled={disabled}
         type={type}
         className={clsx(
           "rounded-lg border font-medium",
@@ -32,12 +35,16 @@ const Button = ({
             "text-sm py-1 px-3": view.includes("small"),
           },
           {
+            "bg-slate-400 hover:bg-slate-400 border-slate-400 text-slate-600":
+              disabled,
+          },
+          {
             "bg-slate-950 border-slate-950 text-slate-50 hover: hover:bg-slate-700 hover:border-slate-700 active:bg-slate-950":
-              view.includes("primary"),
+              view.includes("primary") && !disabled,
           },
           {
             "bg-slate-50 border-slate-950 text-slate-950 hover:bg-slate-200 hover:border-slate-950 active:bg-slate-300":
-              view.includes("secondary"),
+              view.includes("secondary") && !disabled,
           },
         )}
       >

@@ -1,8 +1,21 @@
 import { Button, TextLink, Textfield } from "@components/atoms";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { loginWithCreds } from "api/fakeApi";
 import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import * as yup from "yup";
+
+// Auto redirect to app if user is logged in
+const loader = () => {
+  // TODO proper auth
+  const token = localStorage.getItem("token");
+
+  if (token) {
+    return redirect("/sections");
+  }
+
+  return null;
+};
 
 type Form = {
   login: string;
@@ -24,7 +37,7 @@ const AuthForm = ({ type }: AuthFormProps) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<Form>({
     defaultValues: {
       login: "",
@@ -34,9 +47,24 @@ const AuthForm = ({ type }: AuthFormProps) => {
   });
   const navigate = useNavigate();
 
-  const onSubmit: SubmitHandler<Form> = (data) => {
+  const onSubmit: SubmitHandler<Form> = async (data) => {
     console.log({ data });
-    navigate("/sections");
+
+    try {
+      const res = await loginWithCreds(data);
+
+      if (res.ok) {
+        // TODO temp
+        localStorage.setItem("token", res.token);
+        navigate("/sections");
+      } else {
+        // TODO temp
+        localStorage.removeItem("token");
+        console.error("error from server");
+      }
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   const onFormError: SubmitErrorHandler<Form> = (errors) => {
@@ -55,17 +83,19 @@ const AuthForm = ({ type }: AuthFormProps) => {
             block
             type="text"
             label="login"
+            disabled={isSubmitting}
             {...register("login")}
             error={errors.login?.message}
           />
           <Textfield
             type="password"
             label="password"
+            disabled={isSubmitting}
             {...register("password")}
             error={errors.password?.message}
           />
           <div className="mt-2 w-full">
-            <Button block type="submit">
+            <Button block type="submit" disabled={isSubmitting}>
               {type === "login" ? "Log in" : "Create account"}
             </Button>
           </div>
@@ -82,3 +112,4 @@ const AuthForm = ({ type }: AuthFormProps) => {
 };
 
 export default AuthForm;
+export { loader };

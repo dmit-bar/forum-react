@@ -19,7 +19,7 @@ const Textfield = forwardRef<TextfieldRef, TextfieldProps>((props, ref) => {
           htmlFor="login"
           className={clsx(
             "block text-sm font-medium ",
-            { "text-gray-950": !error },
+            { "text-slate-950": !error },
             { "text-red-700": error },
           )}
         >
@@ -31,9 +31,15 @@ const Textfield = forwardRef<TextfieldRef, TextfieldProps>((props, ref) => {
           ref={ref}
           {...inputProps}
           className={clsx(
-            "w-full rounded-sm border px-2 py-1 font-medium",
-            { "border-gray-950": !error },
-            { "border-red-700": error },
+            "w-full rounded-sm border px-2 py-1 font-medium bg-slate-50",
+            {
+              "bg-slate-200 border-slate-400 text-slate-600":
+                inputProps.disabled,
+            },
+            {
+              "text-slate-950 border-slate-950": !error && !inputProps.disabled,
+            },
+            { "text-slate-950 border-red-700": error },
           )}
         />
         {error ? (
