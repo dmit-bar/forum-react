@@ -1,10 +1,19 @@
-import Login from "@pages/Login";
+import AuthForm from "@pages/AuthForm";
+import Root from "@pages/Root";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <Root />,
+  },
+  {
+    path: "/login",
+    element: <AuthForm key="login" type="login" />,
+  },
+  {
+    path: "/sign-up",
+    element: <AuthForm key="sign-up" type="sign-up" />,
   },
 ]);
 

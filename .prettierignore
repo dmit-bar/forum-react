@@ -1,0 +1,13 @@
+*.*
+!*.js
+!*.ts
+!*.tsx
+!*.css
+!*.md
+!*.json
+!*.html
+
+!*.prettierrc
+
+node_modules/
+build/
