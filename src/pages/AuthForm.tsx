@@ -1,6 +1,7 @@
 import { Button, TextLink, Textfield } from "@components/atoms";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginWithCreds } from "api/fakeApi";
+import { Helmet } from "react-helmet";
 import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
 import { redirect, useNavigate } from "react-router-dom";
 import * as yup from "yup";
@@ -72,45 +73,50 @@ const AuthForm = ({ type }: AuthFormProps) => {
   };
 
   return (
-    <div className="w-full h-full flex place-items-center bg-slate-50">
-      <main className="m-auto w-full max-w-lg h-2/3 flex place-items-center justify-around py-4 px-24 bg-slate-50 border-2 rounded-xl border-slate-950 flex-col ">
-        <span className="font-bold text-2xl">Forum</span>
-        <form
-          className="w-full flex flex-col gap-4"
-          onSubmit={handleSubmit(onSubmit, onFormError)}
-        >
-          <Textfield
-            block
-            type="text"
-            label="login"
-            disabled={isSubmitting}
-            {...register("login")}
-            error={errors.login?.message}
-          />
-          <Textfield
-            type="password"
-            label="password"
-            disabled={isSubmitting}
-            {...register("password")}
-            error={errors.password?.message}
-          />
-          <div className="w-full pt-4">
-            <Button block type="submit" disabled={isSubmitting}>
-              {type === "login" ? "Log in" : "Create account"}
-            </Button>
+    <>
+      <Helmet>
+        <title>{type === "login" ? "Log in" : "Sign up"}</title>
+      </Helmet>
+      <div className="w-full h-full flex place-items-center bg-slate-50">
+        <main className="m-auto w-full max-w-lg h-2/3 flex place-items-center justify-around py-4 px-24 bg-slate-50 border-2 rounded-xl border-slate-950 flex-col ">
+          <span className="font-bold text-2xl">Forum</span>
+          <form
+            className="w-full flex flex-col gap-4"
+            onSubmit={handleSubmit(onSubmit, onFormError)}
+          >
+            <Textfield
+              block
+              type="text"
+              label="login"
+              disabled={isSubmitting}
+              {...register("login")}
+              error={errors.login?.message}
+            />
+            <Textfield
+              type="password"
+              label="password"
+              disabled={isSubmitting}
+              {...register("password")}
+              error={errors.password?.message}
+            />
+            <div className="w-full pt-4">
+              <Button block type="submit" disabled={isSubmitting}>
+                {type === "login" ? "Log in" : "Create account"}
+              </Button>
+            </div>
+          </form>
+          <div className="flex justify-center gap-1">
+            <span>Already have an account? </span>
+            <TextLink to={type === "login" ? "/sign-up" : "/login"}>
+              {type === "login" ? "Sign up" : "Log in"}
+            </TextLink>
           </div>
-        </form>
-        <div className="flex justify-center gap-1">
-          <span>Already have an account? </span>
-          <TextLink to={type === "login" ? "/sign-up" : "/login"}>
-            {type === "login" ? "Sign up" : "Log in"}
-          </TextLink>
-        </div>
-        <div className="flex justify-center">
-          <TextLink to="/">Back to front page</TextLink>
-        </div>
-      </main>
-    </div>
+          <div className="flex justify-center">
+            <TextLink to="/">Back to front page</TextLink>
+          </div>
+        </main>
+      </div>
+    </>
   );
 };
 

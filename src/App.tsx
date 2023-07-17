@@ -3,6 +3,7 @@ import AuthForm, { loader as authLoader } from "@pages/AuthForm";
 import Root from "@pages/Root";
 import ErrorPage from "@pages/error";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Sections } from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
   {
     element: <Forum />,
     children: [
-      { path: "/sections", element: <div>sections</div> },
+      { path: "/sections", element: <Sections /> },
       { path: "/settings", element: <div>settings</div> },
     ],
   },
