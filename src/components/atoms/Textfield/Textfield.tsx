@@ -26,14 +26,14 @@ const Textfield = forwardRef<TextfieldRef, TextfieldProps>((props, ref) => {
           {label}
         </label>
       )}
-      <div className={clsx("mt-1", { "w-full": block })}>
+      <div className={clsx("pt-1 relative", { "w-full": block })}>
         <input
           ref={ref}
           {...inputProps}
           className={clsx(
             "w-full rounded-sm border px-2 py-1 font-medium bg-slate-50",
             {
-              "bg-slate-200 border-slate-400 text-slate-600":
+              "bg-slate-300 border-slate-400 text-slate-400":
                 inputProps.disabled,
             },
             {
@@ -43,7 +43,10 @@ const Textfield = forwardRef<TextfieldRef, TextfieldProps>((props, ref) => {
           )}
         />
         {error ? (
-          <div className="text-red-700 text-sm" id={`${props.id || ""}-error`}>
+          <div
+            className="text-red-700 text-sm absolute"
+            id={`${props.id || ""}-error`}
+          >
             {error}
           </div>
         ) : null}
