@@ -1,8 +1,8 @@
-import { ReactComponent as SvgBooks } from "../../public/icons/books.svg";
-import { ReactComponent as SvgCoding } from "../../public/icons/coding.svg";
-import { ReactComponent as SvgMoviesTv } from "../../public/icons/movies-tv.svg";
-import { ReactComponent as SvgMusic } from "../../public/icons/music.svg";
-import { ReactComponent as SvgVideoGames } from "../../public/icons/videogames.svg";
+import { ReactComponent as SvgBooks } from "./books.svg";
+import { ReactComponent as SvgCoding } from "./coding.svg";
+import { ReactComponent as SvgMoviesTv } from "./movies-tv.svg";
+import { ReactComponent as SvgMusic } from "./music.svg";
+import { ReactComponent as SvgVideoGames } from "./videogames.svg";
 
 const sectionIconMapper = (mnemocode: string) => {
   switch (mnemocode) {

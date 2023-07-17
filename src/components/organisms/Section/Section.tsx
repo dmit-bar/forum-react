@@ -31,7 +31,7 @@ const Section = ({
         </div>
       </Link>
 
-      <div className="flex flex-col">
+      <div className="block">
         <div>
           <TextLink to={link}>{title}</TextLink>
         </div>

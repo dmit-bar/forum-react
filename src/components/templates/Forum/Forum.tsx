@@ -8,7 +8,7 @@ const Forum = () => {
         <header className="px-2 py-1 border-b border-slate-950 text-xl">
           <TextLink to={"/"}>Forum</TextLink>
         </header>
-        <main className="flex-1">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden">
           <Outlet />
         </main>
         <footer className="px-2 py-1 border-t border-slate-950">

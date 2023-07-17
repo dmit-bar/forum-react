@@ -39,7 +39,8 @@ const getFakeSections = async (): Promise<ISection[]> => {
           id: "4",
           mnemocode: "coding",
           title: "Programming",
-          description: "Talk about coding, please.",
+          description:
+            "Talk about infinite loops, please. Talk about infinite loops, please. Talk about infinite loops, please. Talk about infinite loops, please.",
           topics: [],
         },
       ];
