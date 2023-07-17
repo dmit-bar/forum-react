@@ -78,7 +78,7 @@ const AuthForm = ({ type }: AuthFormProps) => {
         <title>{type === "login" ? "Log in" : "Sign up"}</title>
       </Helmet>
       <div className="w-full h-full flex place-items-center bg-slate-50">
-        <main className="m-auto w-full max-w-lg h-2/3 flex place-items-center justify-around py-4 px-24 bg-slate-50 border-2 rounded-xl border-slate-950 flex-col ">
+        <main className="m-auto w-full max-w-lg h-2/3 flex place-items-center justify-around py-4 px-24 bg-slate-50 border rounded-xl border-slate-950 flex-col ">
           <span className="font-bold text-2xl">Forum</span>
           <form
             className="w-full flex flex-col gap-4"

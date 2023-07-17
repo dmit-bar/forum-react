@@ -9,14 +9,14 @@ interface TextLinkProps {
 
 const TextLink = ({ to, children }: TextLinkProps) => {
   return (
-    <Link to={to}>
-      <a
-        className={clsx(
-          "underline font-bold text-slate-950 hover:text-slate-600 active:text-slate-950",
-        )}
-      >
-        {children}
-      </a>
+    <Link
+      to={to}
+      tabIndex={0}
+      className={clsx(
+        "underline font-bold text-red-600 hover:text-red-400 active:text-red-700",
+      )}
+    >
+      {children}
     </Link>
   );
 };
