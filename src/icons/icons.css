@@ -1,0 +1,20 @@
+svg.controller-color-light .controller-base {
+  fill: #ebedee;
+}
+svg.controller-color-dark .controller-base {
+  fill: #38454f;
+}
+
+svg.music-color-light .earphones {
+  fill: #ebedee;
+}
+svg.music-color-dark .earphones {
+  fill: #38454f;
+}
+
+svg.books-color-light .cls-1 {
+  fill: #ebedee;
+}
+svg.books-color-dark .cls-1 {
+  fill: #38454f;
+}

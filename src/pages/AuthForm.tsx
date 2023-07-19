@@ -77,11 +77,11 @@ const AuthForm = ({ type }: AuthFormProps) => {
       <Helmet>
         <title>{type === "login" ? "Log in" : "Sign up"}</title>
       </Helmet>
-      <div className="w-full h-full flex place-items-center bg-slate-50">
-        <main className="m-auto w-full max-w-lg h-2/3 flex place-items-center justify-around py-4 px-24 bg-slate-50 border rounded-xl border-slate-950 flex-col ">
-          <span className="font-bold text-2xl">Forum</span>
+      <div className="w-full h-full flex place-items-center bg-slate-900">
+        <main className="m-auto w-full max-w-lg h-2/3 flex place-items-center justify-around py-4 px-24 bg-slate-700 rounded-xl flex-col ">
+          <span className="font-bold text-2xl text-slate-100">Forum</span>
           <form
-            className="w-full flex flex-col gap-4"
+            className="w-full flex flex-col gap-8"
             onSubmit={handleSubmit(onSubmit, onFormError)}
           >
             <Textfield
@@ -105,13 +105,13 @@ const AuthForm = ({ type }: AuthFormProps) => {
               </Button>
             </div>
           </form>
-          <div className="flex justify-center gap-1">
+          <div className="flex justify-center gap-1 text-slate-100">
             <span>Already have an account? </span>
             <TextLink to={type === "login" ? "/sign-up" : "/login"}>
               {type === "login" ? "Sign up" : "Log in"}
             </TextLink>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center text-slate-100">
             <TextLink to="/">Back to front page</TextLink>
           </div>
         </main>

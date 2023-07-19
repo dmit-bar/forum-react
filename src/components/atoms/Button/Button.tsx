@@ -35,7 +35,7 @@ const Button = ({
             "text-sm py-1 px-3": view.includes("small"),
           },
           {
-            "bg-slate-400 hover:bg-slate-400 border-slate-400 text-slate-600":
+            "bg-slate-400 hover:bg-slate-400 border-slate-400 text-slate-600 cursor-not-allowed":
               disabled,
           },
           {
