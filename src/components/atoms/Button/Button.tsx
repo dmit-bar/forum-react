@@ -35,15 +35,15 @@ const Button = ({
             "text-sm py-1 px-3": view.includes("small"),
           },
           {
-            "bg-slate-400 hover:bg-slate-400 border-slate-400 text-slate-600 cursor-not-allowed":
+            "bg-stone-400 hover:bg-stone-400 border-stone-400 text-stone-600 cursor-not-allowed":
               disabled,
           },
           {
-            "bg-red-600 border-red-600 text-slate-50 hover: hover:bg-red-500 hover:border-red-500 active:bg-red-700 active:border-red-700":
+            "bg-red-600 border-red-600 text-stone-50 hover: hover:bg-red-500 hover:border-red-500 active:bg-red-700 active:border-red-700":
               view.includes("primary") && !disabled,
           },
           {
-            "bg-slate-50 border-slate-950 text-slate-950 hover:bg-slate-200 hover:border-slate-950 active:bg-slate-300":
+            "bg-stone-50 border-stone-950 text-stone-950 hover:bg-stone-200 hover:border-stone-950 active:bg-stone-300":
               view.includes("secondary") && !disabled,
           },
         )}

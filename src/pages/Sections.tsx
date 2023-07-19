@@ -20,7 +20,7 @@ const Sections = () => {
         <title>Sections</title>
       </Helmet>
       <div className="flex flex-col px-2">
-        {isLoading && <div className="text-slate-100">Loading...</div>}
+        {isLoading && <div className="text-stone-100">Loading...</div>}
         {!isLoading && !sections.length && <div>No results found</div>}
         {!isLoading &&
           sections.length &&
@@ -31,7 +31,7 @@ const Sections = () => {
               title={section.title}
               description={section.description}
               link={section.mnemocode}
-              className={idx > 0 ? "border-t border-slate-500" : ""}
+              className={idx > 0 ? "border-t border-stone-500" : ""}
             />
           ))}
       </div>
