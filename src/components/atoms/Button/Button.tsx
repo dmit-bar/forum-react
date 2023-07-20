@@ -39,7 +39,7 @@ const Button = ({
               disabled,
           },
           {
-            "bg-orange-600 border-orange-600 text-stone-50 hover: hover:bg-orange-500 hover:border-orange-500 active:bg-orange-700 active:border-orange-700":
+            "bg-emerald-600 border-emerald-600 text-stone-50 hover: hover:bg-emerald-500 hover:border-emerald-500 active:bg-emerald-700 active:border-emerald-700":
               view.includes("primary") && !disabled,
           },
           {
