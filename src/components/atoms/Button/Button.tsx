@@ -26,7 +26,7 @@ const Button = ({
         disabled={disabled}
         type={type}
         className={clsx(
-          "rounded-lg border font-medium",
+          "rounded-lg border font-medium transition-colors",
           { "w-full": block },
           {
             "py-1 px-4": view.includes("default"),
@@ -39,7 +39,7 @@ const Button = ({
               disabled,
           },
           {
-            "bg-emerald-600 border-emerald-600 text-stone-50 hover: hover:bg-emerald-500 hover:border-emerald-500 active:bg-emerald-700 active:border-emerald-700":
+            "bg-amber-600 border-amber-600 text-stone-50 hover: hover:bg-amber-500 hover:border-amber-500 active:bg-amber-700 active:border-amber-700":
               view.includes("primary") && !disabled,
           },
           {
