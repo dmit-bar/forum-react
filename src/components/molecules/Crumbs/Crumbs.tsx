@@ -1,5 +1,5 @@
+import { GeneralLink } from "@components/atoms";
 import { useMatches } from "@remix-run/react";
-import { GeneralLink } from "~/components/atoms";
 
 interface Crumb {
   route: string;

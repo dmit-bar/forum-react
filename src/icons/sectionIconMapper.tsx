@@ -16,14 +16,14 @@ const sectionIconMapper = (mnemocode: string) => {
             // TODO проставлять класс в зависимости от темы
             isDark ? "books-color-light" : "books-color-dark"
           }
-          width="42px"
+          width="40px"
           height="40px"
         />
       );
     case "coding":
-      return <SvgCoding width="42px" height="40px" />;
+      return <SvgCoding width="40px" height="40px" />;
     case "movies-tv":
-      return <SvgMoviesTv width="42px" height="40px" />;
+      return <SvgMoviesTv width="40px" height="40px" />;
     case "music":
       return (
         <SvgMusic
@@ -31,7 +31,7 @@ const sectionIconMapper = (mnemocode: string) => {
             // TODO проставлять класс в зависимости от темы
             isDark ? "music-color-light" : "music-color-dark"
           }
-          width="42px"
+          width="40px"
           height="40px"
         />
       );
@@ -42,7 +42,7 @@ const sectionIconMapper = (mnemocode: string) => {
             // TODO проставлять класс в зависимости от темы
             isDark ? "controller-color-light" : "controller-color-dark"
           }
-          width="42px"
+          width="40px"
           height="40px"
         />
       );

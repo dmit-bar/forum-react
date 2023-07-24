@@ -20,7 +20,7 @@ const Section = ({
 }: SectionProps) => {
   return (
     <section
-      className={clsx("flex items-center py-1 text-stone-100 px-2", className)}
+      className={clsx("flex items-center py-1 text-stone-100", className)}
     >
       <Link to={link} className="mr-2">
         <div className="w-12 h-12 flex place-items-center place-content-center">

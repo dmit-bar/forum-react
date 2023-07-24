@@ -13,7 +13,7 @@ const TextLink = ({ to, children }: TextLinkProps) => {
       to={to}
       tabIndex={0}
       className={clsx(
-        "underline font-bold text-emerald-400 hover:text-emerald-300 active:text-emerald-500",
+        "underline text-emerald-400 hover:text-emerald-200 active:text-emerald-500",
       )}
     >
       {children}

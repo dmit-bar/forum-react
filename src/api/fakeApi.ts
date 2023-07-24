@@ -1,4 +1,4 @@
-import { ISection } from "./models";
+import { ISection, ITopic } from "./models";
 
 export const loginWithCreds = async (formData: {
   login: string;
@@ -58,6 +58,34 @@ export const getFakeSections = async (): Promise<ISection[]> => {
       ];
 
       resolve(sections);
+    }, 500);
+  });
+};
+
+export const getFakeTopics = async (sectionId: string): Promise<ITopic[]> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      if (sectionId !== "movies-tv") {
+        resolve([]);
+        return;
+      }
+
+      const topics: ITopic[] = [
+        {
+          id: "0",
+          title: "Barbie (2023)",
+          description:
+            "Barbie suffers a crisis that leads her to question her world and her existence.",
+        },
+        {
+          id: "1",
+          title: "Oppenheimer (2023)",
+          description:
+            "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb",
+        },
+      ];
+
+      resolve(topics);
     }, 500);
   });
 };
